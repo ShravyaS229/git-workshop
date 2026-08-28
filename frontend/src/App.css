@@ -1,0 +1,321 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, system-ui, sans-serif;
+  background: #0b1020;
+  color: #f8fafc;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 10% 10%, #312e8155, transparent 30%),
+    radial-gradient(circle at 90% 20%, #0e749055, transparent 30%),
+    #0b1020;
+}
+
+/* HEADER */
+
+.header {
+  max-width: 1100px;
+  margin: auto;
+  padding: 28px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #ffffff15;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.header p {
+  color: #94a3b8;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.badge {
+  padding: 8px 14px;
+  border-radius: 50px;
+
+  background: #22c55e18;
+  color: #86efac;
+
+  font-size: 13px;
+}
+
+/* MAIN */
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 24px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 7vw, 72px);
+  line-height: 1;
+  letter-spacing: -3px;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, #a78bfa, #22d3ee);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  color: #94a3b8;
+  margin-top: 18px;
+  font-size: 17px;
+}
+
+/* CREATE */
+
+.create-card {
+  max-width: 700px;
+  margin: auto;
+
+  padding: 26px;
+
+  background: #ffffff0b;
+  border: 1px solid #ffffff15;
+  border-radius: 20px;
+
+  backdrop-filter: blur(15px);
+}
+
+.create-card h2 {
+  margin-bottom: 18px;
+}
+
+form {
+  display: grid;
+  gap: 12px;
+}
+
+input,
+textarea {
+  width: 100%;
+
+  background: #02061799;
+  border: 1px solid #ffffff15;
+
+  color: white;
+
+  border-radius: 12px;
+  padding: 14px;
+
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #8b5cf6;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+form button {
+  padding: 13px;
+
+  border-radius: 12px;
+
+  background: linear-gradient(90deg, #7c3aed, #0891b2);
+
+  color: white;
+  font-weight: 700;
+
+  transition: 0.2s;
+}
+
+form button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.15);
+}
+
+/* NOTES */
+
+.notes-header {
+  margin-top: 55px;
+  margin-bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.search {
+  max-width: 260px;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.note-card {
+  padding: 22px;
+
+  min-height: 190px;
+
+  background: #ffffff08;
+  border: 1px solid #ffffff12;
+
+  border-radius: 18px;
+
+  transition: 0.25s;
+}
+
+.note-card:hover {
+  transform: translateY(-5px);
+  border-color: #8b5cf655;
+  background: #ffffff0d;
+}
+
+.note-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.note-icon {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 10px;
+
+  background: #8b5cf622;
+  color: #c4b5fd;
+}
+
+.delete {
+  background: transparent;
+  opacity: 0.5;
+  font-size: 16px;
+}
+
+.delete:hover {
+  opacity: 1;
+}
+
+.note-card h3 {
+  margin-top: 18px;
+  font-size: 20px;
+}
+
+.note-card p {
+  margin-top: 9px;
+
+  color: #94a3b8;
+
+  line-height: 1.6;
+}
+
+.note-card small {
+  display: block;
+  margin-top: 20px;
+  color: #64748b;
+}
+
+/* EMPTY */
+
+.empty {
+  text-align: center;
+  padding: 60px;
+  color: #94a3b8;
+}
+
+.empty div {
+  font-size: 45px;
+}
+
+.empty h3 {
+  color: white;
+  margin: 10px;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #64748b;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+  .notes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 550px) {
+  .header {
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .badge {
+    font-size: 11px;
+  }
+
+  main {
+    padding-top: 40px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .notes-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .search {
+    max-width: none;
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+}
